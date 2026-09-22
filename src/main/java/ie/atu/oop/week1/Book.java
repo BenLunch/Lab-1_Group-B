@@ -19,7 +19,7 @@ public class Book {
         if(available)
         {
             available = false;
-            System.out.println(title + " has been borrowed ");
+            System.out.println(title + ": Successfully borrowed ");
         }
         else
         {
