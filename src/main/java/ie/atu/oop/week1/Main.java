@@ -13,7 +13,6 @@ public class Main
         service.returnBook(first);
         System.out.println(first.getStatus());
         System.out.println(second.getStatus());
-
         try {
             service.loanBook(first, 15);
         } catch (IllegalArgumentException ex) {
