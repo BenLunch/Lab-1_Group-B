@@ -30,33 +30,51 @@ public class Book
         this.status = BookStatus.AVAILABLE;
     }
 
-    public enum BookStatus {
+    public enum BookStatus
+    {
         AVAILABLE,
         ON_LOAN
     }
 
-    public String getTitle() {
+    public String getTitle()
+    {
         return title;
     }
 
-    public String getAuthor() {
+    public String getAuthor()
+    {
         return author;
     }
 
-    public int getPageCount() {
+    public int getPageCount()
+    {
         return pageCount;
     }
 
-    public BookStatus getStatus() {
+    public BookStatus getStatus()
+    {
         return status;
     }
 
-    public void borrowBook() {
+    public void borrowBook()
+    {
         if(status == BookStatus.ON_LOAN)
         {
             throw new IllegalStateException("Book has already been borrowed");
         }
         status = BookStatus.ON_LOAN;
+    }
+
+    public void returnBook()
+    {
+        if(BookStatus.AVAILABLE == status)
+        {
+            throw new IllegalStateException("Book is already available");
+        }
+        else if (status == BookStatus.ON_LOAN)
+        {
+            status = BookStatus.AVAILABLE;
+        }
     }
 
 }
