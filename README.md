@@ -36,3 +36,26 @@ like amount o0f loan days and book returns. An argument can be made for the borr
 the library service as these fields pertain to library operations but they are also fine for book because they are 
 in relation to the status of the book itself.
 
+Lab 4 Questions Answers:
+Lab 4 changes LibraryService from working with a single supplied Book to owning a
+List<Book>.
+1. Explain what List<Book> tells the compiler: It tells us that this is a List and Book tells us that only books 
+are allowed in this list. Telling the compiler it is a list means we can get, add and remove from it.
+2.  Explain why final does not prevent books.add(...).: final means that can't be used for a different 
+ArrayList but the items in the array lists can be changed.
+3.  Explain what the enhanced for loop variable represents. In for(Book book : books); book points to the first book,
+then the second book then the third until the list is done.
+4. • Describe what findBookByTitle returns for a known and an unknown title.: For a known title it returns the book 
+object. for an unknow title it returns null.
+5.  Explain why removeBook reuses findBookByTitle instead of writing another search loop.: Why code it again if you 
+have it. We can reuse findBookByTitle meaning no need for a loop and less bugs.
+6. • Explain which responsibilities belong to Main, LibraryService and Book.:
+Main: Creates objects, calls methods, prints result.
+LibraryService: Holds list of books and actions involving books. e.g. loaning, removing, returning.
+Book: Holds title, auhtor, pageCount,and status, checks if valid, controls status change
+I used AI to help me understand the concepts that the questions were asking me about. helping me to
+understand how exactly every piece of my code operates and the order it occurs.
+
+
+
+
