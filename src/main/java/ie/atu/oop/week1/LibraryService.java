@@ -55,11 +55,15 @@ public class LibraryService {
         return null;
     }
 
-    public boolean removeBook(Book book) {
-        if (book == null) {
-            throw new IllegalArgumentException("Book must not be null");
+    public boolean removeBook(String title) {
+
+        Book found = findBookByTitle(title);
+        if (found == null)
+        {
+            return false;
         }
-        return books.remove(book);
+        books.remove(found);
+        return true;
     }
 
 }
