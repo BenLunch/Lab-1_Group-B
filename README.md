@@ -52,9 +52,36 @@ have it. We can reuse findBookByTitle meaning no need for a loop and less bugs.
 6. • Explain which responsibilities belong to Main, LibraryService and Book.:
 Main: Creates objects, calls methods, prints result.
 LibraryService: Holds list of books and actions involving books. e.g. loaning, removing, returning.
-Book: Holds title, auhtor, pageCount,and status, checks if valid, controls status change
+Book: Holds title, author, pageCount,and status, checks if valid, controls status change
 I used AI to help me understand the concepts that the questions were asking me about. helping me to
 understand how exactly every piece of my code operates and the order it occurs.
+
+Lab 5 Question Answers:
+In lab 4 book protects one object and LibraryService owns a private List<Book>. In lab 5 we locate a throw statement
+already used in Book, explore Path and Files. Then we save Library Catalogue to data/book.cvs and this will rebuild
+it on the next run.
+1. Briefly explain the difference between the throw statement inside book and the catch block used by the caller:
+The throw statement in Book is where a problem with book is detected.Book has error handling e.g. title being blank 
+or pageCount being letters not numbers. The catch block used by caller handles the problem detected by the throw 
+statement and prints the correlated message. Allowing the program to keep running and fix errors while still 
+operating.
+2. Record what Path.of(...) does and name one Path method and one Files method used in the lab: Path.of(...)
+creates a path object. This shows us the location of a file or folder on the computer. 
+One Path method - getFileName().
+One Files method - File.exists(file)
+3. State that Lab 5 adds exception handling and CSV persistence to the Library application: Lab 5 adds exception
+handling using throw and catch to handle errors, we also use cvs persistence to carry on information through
+multiple runs of main. 
+4.  Explain the difference between unchecked NumberFormatException and checked IOException: NumberFormatException 
+comes from a bad input like typing thirty four rather than 34. IOException is an error with input / output 
+operations. This error does have to be dealt with usually with a try/catch or with a throw IOException.
+5. Explain the difference between Path and Files:
+Path - This shows us where a file is or where it would be. It is the address
+Files - This puts actions into place such as creating a file, read file and get file. It is the action.
+6. Document the CSV columns in order: title, author, pageCount, status.
+   title,author,pageCount,status
+   Dune,Frank Herbert,412,ON_LOAN
+   Clean Code,Robert C. Martin,464,AVAILABLE
 
 
 
