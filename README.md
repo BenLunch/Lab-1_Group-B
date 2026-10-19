@@ -14,10 +14,10 @@ pageCount: 366.
 available: false.
 
 Lab 3 Question Answers:
-1. In the main program the 7 day call reaches the borrow book method
+1. In the main program the 7-day call reaches the borrow book method
 because the duration of the loan is within the 1 to 14 day parameter
-we set in LibraryService where as the 15 day call was outside this parameter
-also the book was AVAILABLE before the 15 day call because before this we
+we set in LibraryService where as the 15-day call was outside this parameter
+also the book was AVAILABLE before the 15-day call because before this we
 called our return book method to make the ON_LOAN book AVAILABLE again.
 2. JDK and Java Package: Open jdk - 27 / ie.atu.oop.week1
 3. Why does the constructor call null before isBlank(): If null is true then isBlank() won't be called
@@ -33,7 +33,7 @@ better encapsulation than just using a status setter. It also allows for better 
 is or the status of the book should be in book. Any checks in relation to library operations should be in library.
 For book examples would be title checks, author checks and checking pageCount. LibraryService has checks for things
 like amount o0f loan days and book returns. An argument can be made for the borrow and return book checks to be in 
-the library service as these fields pertain to library operations but they are also fine for book because they are 
+the library service as these fields pertain to library operations, but they are also fine for book because they are 
 in relation to the status of the book itself.
 
 Lab 4 Questions Answers:
@@ -48,13 +48,40 @@ then the second book then the third until the list is done.
 4. • Describe what findBookByTitle returns for a known and an unknown title.: For a known title it returns the book 
 object. for an unknow title it returns null.
 5.  Explain why removeBook reuses findBookByTitle instead of writing another search loop.: Why code it again if you 
-have it. We can reuse findBookByTitle meaning no need for a loop and less bugs.
+have it. We can reuse findBookByTitle meaning no need for a loop and fewer bugs.
 6. • Explain which responsibilities belong to Main, LibraryService and Book.:
 Main: Creates objects, calls methods, prints result.
 LibraryService: Holds list of books and actions involving books. e.g. loaning, removing, returning.
-Book: Holds title, auhtor, pageCount,and status, checks if valid, controls status change
+Book: Holds title, author, pageCount,and status, checks if valid, controls status change
 I used AI to help me understand the concepts that the questions were asking me about. helping me to
 understand how exactly every piece of my code operates and the order it occurs.
+
+Lab 5 Question Answers:
+In lab 4 book protects one object and LibraryService owns a private List<Book>. In lab 5 we locate a throw statement
+already used in Book, explore Path and Files. Then we save Library Catalogue to data/book.cvs and this will rebuild
+it on the next run.
+1. Briefly explain the difference between the throw statement inside book and the catch block used by the caller:
+The throw statement in Book is where a problem with book is detected.Book has error handling e.g. title being blank 
+or pageCount being letters not numbers. The catch block used by caller handles the problem detected by the throw 
+statement and prints the correlated message. Allowing the program to keep running and fix errors while still 
+operating.
+2. Record what Path.of(...) does and name one Path method and one Files method used in the lab: Path.of(...)
+creates a path object. This shows us the location of a file or folder on the computer. 
+One Path method - getFileName().
+One Files method - File.exists(file)
+3. State that Lab 5 adds exception handling and CSV persistence to the Library application: Lab 5 adds exception
+handling using throw and catch to handle errors, we also use cvs persistence to carry on information through
+multiple runs of main. 
+4.  Explain the difference between unchecked NumberFormatException and checked IOException: NumberFormatException 
+comes from a bad input like typing thirty-four rather than 34. IOException is an error with input / output 
+operations. This error does have to be dealt with usually with a try/catch or with a throw IOException.
+5. Explain the difference between Path and Files:
+Path - This shows us where a file is or where it would be. It is the address
+Files - This puts actions into place such as creating a file, read file and get file. It is the action.
+6. Document the CSV columns in order: title, author, pageCount, status.
+   title,author,pageCount,status
+   Dune,Frank Herbert,412,ON_LOAN
+   Clean Code,Robert C. Martin,464,AVAILABLE
 
 
 
